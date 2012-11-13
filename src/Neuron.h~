@@ -1,0 +1,12 @@
+#ifndef INEURON_H
+#define INEURON_H
+
+#include <vector>
+
+/* Abstract class/interface that defines the required functions of
+   a neuron in the network */
+class INeuron
+{
+ public:
+  virtual double activate(std::vector<double>) =0;
+}

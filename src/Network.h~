@@ -1,0 +1,10 @@
+#ifndef INETWORK_H
+#define INETWORK_H
+
+#include <vector>
+
+class INetwork
+{
+ public:
+  virtual void create(std::vector<unsigned>) =0;
+};

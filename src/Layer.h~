@@ -1,0 +1,13 @@
+#ifndef LAYER_H
+#define LAYER_H
+
+#include <vector>
+
+class Layer
+{
+ protected:
+  Layer(){};
+ public:
+  virtual void assemble(unsigned) =0;
+ private:
+  

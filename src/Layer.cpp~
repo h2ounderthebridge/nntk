@@ -1,0 +1,7 @@
+#include "Layer.h"
+#include <vector>
+
+Layer::Layer(string ntype){ neuron_type = ntype; };
+
+
+

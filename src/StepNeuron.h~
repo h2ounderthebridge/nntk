@@ -1,0 +1,13 @@
+#ifndef STEPNEURON_H
+#define STEPNEURON_H
+
+#include <vector>
+#include "Neuron.h"
+
+class StepNeuron : public Neuron
+{
+ protected:
+  StepNeuron();
+ public:
+  double activate(std::vector<double> inputs);
+};
