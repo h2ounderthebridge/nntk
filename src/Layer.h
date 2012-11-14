@@ -7,13 +7,13 @@
 class Layer
 {
  protected:
-  Layer(string ntype, unsigned n);
+  Layer(std::string ntype, unsigned n);
  public:
   std::vector<double> activateLayer(std::vector<double> inputs);
   unsigned getNeuronCount();
  private:
   std::vector<Neuron> m_neurons;
-  string neuron_type;
+  std::string neuron_type;
 };
 
 #endif

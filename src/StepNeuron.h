@@ -6,9 +6,8 @@
 
 class StepNeuron : public Neuron
 {
- protected:
-  StepNeuron(double threshold);
  public:
+  StepNeuron(double threshold);
   double activate(std::vector<double> inputs);
  private:
   double m_threshold;

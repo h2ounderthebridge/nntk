@@ -1,0 +1,14 @@
+#include "SoftMaxNeuron.h"
+#include <vector>
+
+using namespace std;
+
+SoftMaxNeuron::SoftMaxNeuron(){};
+
+void SoftMaxNeuron::rawActivate(vector<double> inputs)
+{
+  double summation = 0;
+  for(unsigned i = 0; i < inputs.size(); i++) {
+    summation += m_weights[i]*inputs[i];
+  }
+  

@@ -1,14 +1,15 @@
-#include "StepNeuron.h"
+#include "SigmoidNeuron.h"
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
-StepNeuron::StepNeuron(double threshold)
+SigmoidNeuron::SigmoidNeuron(double threshold)
 {
   m_threshold = threshold;
 }
 
-double StepNeuron::activate(vector<double> inputs)
+double SigmoidNeuron::activate(vector<double> inputs)
 {
   double summation = 0;
   double result;
@@ -16,11 +17,6 @@ double StepNeuron::activate(vector<double> inputs)
   for(unsigned i = 0; i < inputs.size(); i++) {
     summation += weights[i]*inputs[i];
   }
-  if(summation > m_threshold) {
-    result = 1.0;
-  }
-  else{
-    result = 0.0;
-  }
+  result = 1/(1 +pow((exp(1)),-(summation-m_threshold)));
   return result;
 }

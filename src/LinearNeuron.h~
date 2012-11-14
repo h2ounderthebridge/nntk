@@ -1,0 +1,14 @@
+#ifndef LINEARNEURON_H
+#define LINEARNEURON_H
+
+#include <vector>
+
+class LinearNeuron : public Neuron
+{
+ protected:
+  LinearNeuron(double bias);
+ public:
+  double activate(std::vector<double> inputs);
+ private:
+  double m_bias;
+}

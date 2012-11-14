@@ -1,8 +1,6 @@
 #include "Neuron.h"
 #include <vector>
 
-using namespace std;
-
 Neuron::Neuron(){};
 
 vector<double> Neuron::getWeights() { return m_weights; };

@@ -2,12 +2,18 @@
 #define LAYER_H
 
 #include <vector>
+#include "Neuron.h"
 
 class Layer
 {
  protected:
-  Layer(){};
+  Layer(string ntype, unsigned n);
  public:
-  virtual void assemble(unsigned) =0;
+  std::vector<double> activateLayer(std::vector<double> inputs);
+  unsigned getNeuronCount();
  private:
-  
+  std::vector<Neuron> m_neurons;
+  string neuron_type;
+};
+
+#endif

@@ -1,14 +1,14 @@
-#include "StepNeuron.h"
+#include "LinearNeuron.h"
 #include <vector>
 
 using namespace std;
 
-StepNeuron::StepNeuron(double threshold)
+LinearNeuron::LinearNeuron(double bias)
 {
-  m_threshold = threshold;
+  m_bias = bias;
 }
 
-double StepNeuron::activate(vector<double> inputs)
+double LinearNeuron::activate(vector<double> inputs)
 {
   double summation = 0;
   double result;
@@ -16,11 +16,6 @@ double StepNeuron::activate(vector<double> inputs)
   for(unsigned i = 0; i < inputs.size(); i++) {
     summation += weights[i]*inputs[i];
   }
-  if(summation > m_threshold) {
-    result = 1.0;
-  }
-  else{
-    result = 0.0;
-  }
+  result = summation + m_bias;
   return result;
 }

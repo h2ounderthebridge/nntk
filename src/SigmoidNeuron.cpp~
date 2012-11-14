@@ -1,0 +1,14 @@
+#include "SigmoidNeuron.h"
+#inlcude <vector>
+
+SigmoidNeuron::SigmoidNeuron(double threshold)
+{
+  m_threshold = threshold;
+}
+
+double SigmoidNeuron::activate(vector<double> inputs)
+{
+  double summation = 0;
+  double result;
+  for(unsigned i = 0; i < inputs.size(); i++) {
+    

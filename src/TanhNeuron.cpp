@@ -1,14 +1,15 @@
-#include "StepNeuron.h"
+#include "TanhNeuron.h"
+#include <math.h>
 #include <vector>
 
 using namespace std;
 
-StepNeuron::StepNeuron(double threshold)
+TanhNeuron::TanhNeuron(double threshold)
 {
   m_threshold = threshold;
 }
 
-double StepNeuron::activate(vector<double> inputs)
+double TanhNeuron::activate(vector<double> inputs)
 {
   double summation = 0;
   double result;
@@ -16,11 +17,7 @@ double StepNeuron::activate(vector<double> inputs)
   for(unsigned i = 0; i < inputs.size(); i++) {
     summation += weights[i]*inputs[i];
   }
-  if(summation > m_threshold) {
-    result = 1.0;
-  }
-  else{
-    result = 0.0;
-  }
+  double beta = summation-m_threshold;
+  result = (pow((exp(1)),beta)-pow((exp(1)),-beta))/(pow((exp(1)),beta)+pow((exp(1)),-beta));
   return result;
 }

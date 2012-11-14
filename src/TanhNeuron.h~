@@ -1,13 +1,13 @@
-#ifndef STEPNEURON_H
-#define STEPNEURON_H
+#ifndef TANHNEURON_H
+#define TANHNEURON_H
 
-#include <vector>
 #include "Neuron.h"
+#include <vector>
 
-class StepNeuron : public Neuron
+class TanhNeuron : public Neuron
 {
  protected:
-  StepNeuron(double threshold);
+  TanhNeuron(double threshold);
  public:
   double activate(std::vector<double> inputs);
  private:

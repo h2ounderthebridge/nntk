@@ -1,0 +1,12 @@
+#ifndef SOFTMAXNEURON_H
+#define SOFTMAXNEURON_H
+
+#include "Neuron.h"
+#include <vector>
+
+class SoftMaxNeuron : public Neuron
+{
+ protected:
+  SoftMaxNeuron();
+ public:
+  

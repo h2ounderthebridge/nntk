@@ -1,0 +1,18 @@
+#include "LinearNeuron.h"
+#include <vector>
+
+LinearNeuron::LinearNueron(double bias)
+{
+  m_bias = bias;
+}
+
+double LinearNeuron::activate(vector<double> inputs)
+{
+  double summation = 0;
+  double result;
+  for(unsigned i = 0; i < inputs.size(); i++) {
+    summation += m_weights[i]*inputs[i];
+  }
+  result = summation + m_bias;
+  return result;
+}
